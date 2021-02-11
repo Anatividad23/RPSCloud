@@ -18,12 +18,13 @@ class GameController extends Controller
             //get form values
             $move = $request->input('move');
             
-            
-            //make new calculator object
-            $game = new Game($move,"undecided", 0, 0);
-            
             //call business service to get result
             $service = new GameBusinessService();
+            
+            //make new calculator object
+            
+            $game = $service->getGame();
+            $game->getMove($move);
             
             $result = $service->playGame($game);
             $game =$result;

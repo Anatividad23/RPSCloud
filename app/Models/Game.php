@@ -8,7 +8,10 @@ class Game{
     private $loss;
     
     public function __construct($move,$result,$win,$loss){
-        
+        $this->move = $move;
+        $this->result=$result;
+        $this->win = $win;
+        $this->loss = $loss;
     }
     /**
      * @return mixed
